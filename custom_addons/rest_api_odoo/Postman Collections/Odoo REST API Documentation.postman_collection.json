@@ -1,0 +1,262 @@
+{
+	"info": {
+		"_postman_id": "8a9935bd-0514-4624-80f6-aaa92bdc0ae9",
+		"name": "Odoo REST API Documentation",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "44035028",
+		"_collection_link": "https://galang-1530823.postman.co/workspace/Galang's-Workspace~b5d48ce5-1102-46a4-87f2-7d2f68b628fa/collection/44035028-8a9935bd-0514-4624-80f6-aaa92bdc0ae9?action=share&source=collection_link&creator=44035028"
+	},
+	"item": [
+		{
+			"name": "API Authentication",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "db",
+						"value": "db_name",
+						"description": "Odoo database name e.g. odoo_db;",
+						"type": "text"
+					},
+					{
+						"key": "username",
+						"value": "username",
+						"description": "Username odoo",
+						"type": "text"
+					},
+					{
+						"key": "password",
+						"value": "password",
+						"description": "Password odoo",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8069/auth_odoo",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8069",
+					"path": [
+						"auth_odoo"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET Records",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "username",
+						"value": "username",
+						"type": "text"
+					},
+					{
+						"key": "password",
+						"value": "password",
+						"type": "text"
+					},
+					{
+						"key": "api-key",
+						"value": "generated-api-key",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"fields\": [\"example1\", \"example2\"]\n    \n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8069/request/get",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8069",
+					"path": [
+						"request",
+						"get"
+					],
+					"query": [
+						{
+							"key": "model",
+							"value": "scheme.table",
+							"disabled": true
+						},
+						{
+							"key": "id",
+							"value": "1",
+							"description": "Additional Parameter;",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CREATE Records",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "username",
+						"value": "username",
+						"type": "text"
+					},
+					{
+						"key": "password",
+						"value": "password",
+						"type": "text"
+					},
+					{
+						"key": "api_key",
+						"value": "generated-api-key",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"fields\" :[\"example1\",\"example2\"] ,\n    \"values\": {\"example1\": \"values1\",\n               \"example2\":\"values2\"\n              }\n\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8069/request/post?model=schema.table",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8069",
+					"path": [
+						"request",
+						"post"
+					],
+					"query": [
+						{
+							"key": "model",
+							"value": "schema.table"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "UPDATE Records",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "username",
+						"value": "username",
+						"type": "text"
+					},
+					{
+						"key": "password",
+						"value": "password",
+						"type": "text"
+					},
+					{
+						"key": "api-key",
+						"value": "generated-api-key",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"fields\" :[\"example1\",\"example2\"] ,\n    \"values\": {\"example1\": \"values1\",\n               \"example2\":\"values2\"\n              }\n\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8069/request/put?model=schema.table&id=1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8069",
+					"path": [
+						"request",
+						"put"
+					],
+					"query": [
+						{
+							"key": "model",
+							"value": "schema.table"
+						},
+						{
+							"key": "id",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DELETE Records",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "username",
+						"value": "username",
+						"type": "text"
+					},
+					{
+						"key": "password",
+						"value": "password",
+						"type": "text"
+					},
+					{
+						"key": "api-key",
+						"value": "generated-api-key",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8069/request/delete?model=schema.table&id=1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8069",
+					"path": [
+						"request",
+						"delete"
+					],
+					"query": [
+						{
+							"key": "model",
+							"value": "schema.table"
+						},
+						{
+							"key": "id",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

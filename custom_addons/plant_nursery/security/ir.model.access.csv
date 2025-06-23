@@ -1,0 +1,4 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_plant_seed,plant.seed,model_plant_seed,base.group_user,1,1,1,1
+access_pre_nursery,plant.pre_nursery,model_plant_pre_nursery,base.group_user,1,1,1,1
+access_main_nursery,plant.main_nursery,model_plant_main_nursery,base.group_user,1,1,1,1

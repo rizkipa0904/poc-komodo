@@ -1,0 +1,40 @@
+/** Plant Activity Barcode Scanner **/
+
+.o_plant_activity_barcode_bg {
+    height: 100%;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.o_plant_activity_barcode_main {
+    font-family: 'Lato', sans-serif;
+    width: 100%;
+    text-align: center;
+    padding: 2em;
+}
+
+.o_plant_activity_previous_menu {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}
+
+.o_notification_manager .o_plant_activity_success {
+    color: white;
+    background-color: #5BC236;
+}
+
+button#scan_button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+button#scan_button:hover {
+    background: #0056b3;
+}

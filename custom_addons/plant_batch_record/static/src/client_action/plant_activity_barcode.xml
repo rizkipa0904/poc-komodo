@@ -1,0 +1,38 @@
+<templates xml:space="preserve" id="plant_activity_barcode">
+    <t t-name="plant_activity_barcode">
+        <div class="o_plant_activity_barcode_bg o_home_menu_background">
+            <div class="o_plant_activity_barcode_main bg-view position-relative text-center">
+                
+                <!-- Tombol Kembali -->
+                <a href="#" class="o_plant_activity_previous_menu d-block float-start">
+                    <i class="fa fa-chevron-left fa-lg mt-3" t-on-click.prevent="onClickBack"></i>
+                </a>
+
+                <!-- Header -->
+                <h1 class="mb-4">Scan QR Bedeng</h1>
+                <p>Scan QR Bedeng untuk mengisi aktivitas</p>
+
+                <!-- Container QR Scanner -->
+                <div class="o_stock_barcode_container position-relative d-inline-block mt-4 mb-5 w-100">
+                    <t t-if="state.mobileScanner">
+                        <div class="o_stock_mobile_barcode_container">
+                            <img src="/qr_code_scanner/static/img/barcode.png" alt="Barcode" class="img-fluid my-1"/>
+                            <!-- <button class="btn btn-primary o_stock_mobile_barcode" t-on-click="openMobileScanner">
+                                <i class="fa fa-camera fa-2x o_mobile_barcode_camera"></i> Tap to scan
+                            </button> -->
+                        </div>
+                    </t>
+                    <t t-else="">
+                        <img src="/qr_code_scanner/static/img/barcode.png" alt="Barcode" class="img-fluid my-1"/>
+                    </t>
+                    <span class="o_stock_barcode_laser"></span>
+                </div>
+
+                <!-- Tombol Scan Manual -->
+                <button id="scan_button" class="btn btn-primary mt-3" t-on-click="onScanButtonClick">
+                    <i class="fa fa-qrcode"></i> Scan QR Code
+                </button>
+            </div>
+        </div>
+    </t>
+</templates>

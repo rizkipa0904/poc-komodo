@@ -1,0 +1,135 @@
+<odoo>
+    <data>
+
+        <record id="view_pre_nursery_list" model="ir.ui.view">
+            <field name="name">plant.pre_nursery.list</field>
+            <field name="model">plant.pre_nursery</field>
+            <field name="arch" type="xml">
+                <list>
+                    <field name="plant_code"/>
+                    <field name="batch_number"/>
+                    <field name="bed_number"/>
+                    <field name="seed_id"/>
+                    <field name="number_of_seeds"/>
+                    <field name="planting_date"/>
+                    <field name="transplanting_date"/>
+                    <field name="plant_qr_code" widget="image" class="oe_avatar"/>
+                </list>
+            </field>
+        </record>
+
+        <record id="view_main_nursery_list" model="ir.ui.view">
+            <field name="name">plant.main_nursery.list</field>
+            <field name="model">plant.main_nursery</field>
+            <field name="arch" type="xml">
+                <list>
+                    <field name="plant_code"/>
+                    <field name="batch_id"/>
+                    <field name="bed_number"/>
+                    <field name="plot_number"/>
+                    <field name="row_number"/>
+                    <field name="tree_number"/>
+                    <field name="planting_date"/>
+                    <field name="plant_qr_code" widget="image" class="oe_avatar"/>
+                </list>
+            </field>
+        </record>
+
+        <!-- Seed Form View -->
+        <record id="view_seed_form" model="ir.ui.view">
+            <field name="name">plant.seed.form</field>
+            <field name="model">plant.seed</field>
+            <field name="arch" type="xml">
+                <form string="Seed Information">
+                    <sheet>
+                        <group>
+                            <field name="name"/>
+                            <field name="origin"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <!-- Pre-Nursery Form View -->
+        <record id="view_pre_nursery_form" model="ir.ui.view">
+            <field name="name">plant.pre_nursery.form</field>
+            <field name="model">plant.pre_nursery</field>
+            <field name="arch" type="xml">
+                <form string="Pre-Nursery Batch">
+                    <sheet>
+                        <group>
+                            <field name="plant_code" readonly="1"/>
+                            <field name="batch_number"/>
+                            <field name="bed_number"/>
+                            <field name="seed_id"/>
+                            <field name="number_of_seeds"/>
+                            <field name="planting_date"/>
+                            <field name="transplanting_date"/>
+                            <field name="plant_qr_code" widget="image" class="oe_avatar"/>
+                            <button name="generate_qr_code" type="object" string="Generate QR Code" class="btn-primary"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <!-- Main Nursery Form View -->
+        <record id="view_main_nursery_form" model="ir.ui.view">
+            <field name="name">plant.main_nursery.form</field>
+            <field name="model">plant.main_nursery</field>
+            <field name="arch" type="xml">
+                <form string="Main Nursery Batch">
+                    <sheet>
+                        <group>
+                            <field name="plant_code" readonly="1"/>
+                            <field name="batch_id"/>
+                            <field name="bed_number"/>
+                            <field name="plot_number"/>
+                            <field name="row_number"/>
+                            <field name="tree_number"/>
+                            <field name="planting_date"/>
+                            <field name="plant_qr_code" widget="image" class="oe_avatar"/>
+                            <button name="generate_qr_code" type="object" string="Generate QR Code" class="btn-primary"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <!-- Action for Seed Model -->
+        <record id="action_seed" model="ir.actions.act_window">
+            <field name="name">Seeds</field>
+            <field name="res_model">plant.seed</field>
+            <field name="view_mode">list,form</field>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    Manage different types of seeds here.
+                </p>
+            </field>
+        </record>
+        <!-- Action for Pre-Nursery Model -->
+        <record id="action_pre_nursery" model="ir.actions.act_window">
+            <field name="name">Pre-Nursery</field>
+            <field name="res_model">plant.pre_nursery</field>
+            <field name="view_mode">list,form</field>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    Track pre-nursery batches and transplant dates.
+                </p>
+            </field>
+        </record>
+        <!-- Action for Main Nursery Model -->
+        <record id="action_main_nursery" model="ir.actions.act_window">
+            <field name="name">Main Nursery</field>
+            <field name="res_model">plant.main_nursery</field>
+            <field name="view_mode">list,form</field>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    Create and manage nursery records easily.
+                </p>
+            </field>
+        </record>
+
+    </data>
+</odoo>

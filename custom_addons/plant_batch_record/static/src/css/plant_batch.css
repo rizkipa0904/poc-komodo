@@ -1,0 +1,7 @@
+/* Change input field background color */
+.custom_view .o_field_widget .o_input {
+    background-color: #ffffff !important; /* White */
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 5px;
+}

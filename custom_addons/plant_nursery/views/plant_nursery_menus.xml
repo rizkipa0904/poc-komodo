@@ -1,0 +1,24 @@
+<odoo>
+    <data>
+        <!-- Top Level Menu -->
+        <menuitem id="menu_plant_nursery" name="Plant Nursery"/>
+
+        <!-- Sub-menu for Seeds -->
+        <menuitem id="menu_seed"
+                  name="Seeds"
+                  parent="menu_plant_nursery"
+                  action="action_seed"/>
+
+        <!-- Sub-menu for Pre-Nursery -->
+        <menuitem id="menu_pre_nursery"
+                  name="Pre-Nursery"
+                  parent="menu_plant_nursery"
+                  action="action_pre_nursery"/>
+
+        <!-- Sub-menu for Main Nursery (already existing) -->
+        <menuitem id="menu_main_nursery"
+                  name="Main Nursery"
+                  parent="menu_plant_nursery"
+                  action="action_main_nursery"/>
+    </data>
+</odoo>

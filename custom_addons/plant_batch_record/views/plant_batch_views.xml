@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Tree View -->
+    <record id="view_plant_batch_tree" model="ir.ui.view">
+        <field name="name">plant.batch.list</field>
+        <field name="model">plant.batch</field>
+        <field name="arch" type="xml">
+            <list string="Plant Batch List">
+                <field name="plant_code"/>
+                <field name="batch_number"/>
+                <field name="bed_number"/>
+                <field name="image" widget="image"/>
+                <field name="number_of_seeds"/>
+                <field name="type_of_seeds"/>
+                <field name="origin_of_seeds"/>
+                <field name="planting_date"/>
+                <field name="transplanting_date"/>
+                <field name="qr_code" widget="image"/>
+            </list>
+        </field>
+    </record>
+
+    <!-- Form View -->
+    <record id="view_plant_batch_form" model="ir.ui.view">
+        <field name="name">plant.batch.list</field>
+        <field name="model">plant.batch</field>
+        <field name="arch" type="xml">
+            <form string="Plant Batch">
+                <sheet>
+                    <group>
+                        <field name="plant_code"/>
+                        <field name="batch_number"/>
+                        <field name="bed_number"/>
+                        <field name="image" widget="image"/>
+                        <field name="number_of_seeds"/>
+                        <field name="type_of_seeds"/>
+                        <field name="origin_of_seeds"/>
+                        <field name="planting_date"/>
+                        <field name="transplanting_date"/>
+                    </group>
+                    <group>
+                        <field name="qr_code" widget="image" class="oe_avatar"/>
+                        <field name="qr_code_str" invisible="1"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- Action untuk membuka daftar plant.batch -->
+    <record id="action_plant_batch" model="ir.actions.act_window">
+        <field name="name">Plant Batch Records</field>
+        <field name="res_model">plant.batch</field>
+        <field name="view_mode">list,form</field>
+    </record>
+
+    <!-- Action untuk scan QR dengan context -->
+    <record id="plant_activity_scan_qr_action" model="ir.actions.client">
+        <field name="name">Scan QR Code</field>
+        <field name="tag">plant_activity_barcode</field>
+        <field name="target">fullscreen</field>
+    </record>
+
+    <!-- Tambahkan action ke menu -->
+    <menuitem id="plant_batch_menu" name="Plant Batch" sequence="1"/>
+    <menuitem id="plant_batch_menu_main" name="Plant Batches" parent="plant_batch_menu" sequence="2" action="action_plant_batch"/>
+    <menuitem id="menu_plant_activity_scan_qr" name="Scan QR Code" sequence="3" action="plant_activity_scan_qr_action" parent="plant_batch_menu"/>
+
+</odoo>

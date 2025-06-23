@@ -1,1 +1,1 @@
-# learn-komodo
+# poc-odoo

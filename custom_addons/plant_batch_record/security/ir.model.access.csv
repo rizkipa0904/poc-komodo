@@ -1,0 +1,3 @@
+id,name,model_id:id,group_id,perm_read,perm_write,perm_create,perm_unlink
+access_plant_batch,plant.batch,model_plant_batch,,1,1,1,1
+access_plant_activity,plant.activity,model_plant_activity,,1,1,1,1
