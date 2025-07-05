@@ -2,7 +2,7 @@
 set -e
 
 # Ganti ini dengan token Vault kamu
-VAULT_TOKEN="sssssssss"
+VAULT_TOKEN="${VAULT_TOKEN}"
 
 # Endpoint Vault
 VAULT_URL="https://vault.sshub.web.id/v1/kv/data/staging/odoo"
